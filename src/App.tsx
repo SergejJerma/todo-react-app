@@ -18,18 +18,6 @@ function App() {
     setTodos(response.data);
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (editingTodoId) {
-  //     await updateTodo(editingTodoId, { title, description });
-  //     setEditingTodoId(null);
-  //   } else {
-  //     await createTodo({ id: uuidv4(), title, description });
-  //   }
-  //   setTitle('');
-  //   setDescription('');
-  //   fetchTodos();
-  // };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
