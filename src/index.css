@@ -1,19 +1,49 @@
+.app-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.input, .textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
 .button {
   border: none;
   color: white;
   padding: 10px 15px;
   cursor: pointer;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
+  font-size: 1rem;
 }
+
 .button-add {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Green */
 }
+
 .button-update {
-  background-color: #FFA500; 
+  background-color: #FFA500; /* Orange */
 }
+
 .button-edit {
-  background-color: #2196F3; 
+  background-color: #2196F3; /* Blue */
 }
+
 .button-delete {
-  background-color: #f44336; 
+  background-color: #f44336; /* Red */
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }

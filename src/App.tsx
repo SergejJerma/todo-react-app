@@ -46,7 +46,7 @@ function App() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: 'auto', padding: 20 }}>
+    <div className="app-container">
       <h1>Todo App</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -54,32 +54,41 @@ function App() {
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
           required
-          style={{ width: '100%', marginBottom: 10 }}
+          className="input"
         />
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
           required
-          style={{ width: '100%', marginBottom: 10 }}
+          className="textarea"
         />
-        <button type="submit" className={`button ${editingTodoId ? 'button-update' : 'button-add'}`}>
+        <button
+          type="submit"
+          className={`button ${editingTodoId ? 'button-update' : 'button-add'}`}>
           {editingTodoId ? 'Update Todo' : 'Add Todo'}
         </button>
       </form>
-
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <ul className="todo-list">
         {todos.map((todo) => (
-          <li key={todo.id} style={{ marginBottom: 10, border: '1px solid #ccc', padding: 10 }}>
+          <li key={todo.id} className="todo-item">
             <h3>{todo.title}</h3>
             <p>{todo.description}</p>
-            <button onClick={() => handleEdit(todo)} className="button button-edit">Edit</button>
-            <button onClick={() => handleDelete(todo.id)} className="button button-delete">Delete</button>
+            <button
+              onClick={() => handleEdit(todo)}
+              className="button button-edit">
+              Edit
+            </button>
+            <button
+              onClick={() => handleDelete(todo.id)}
+              className="button button-delete">
+              Delete
+            </button>
           </li>
         ))}
       </ul>
     </div>
-  );
+  );  
 }
 
 export default App;
