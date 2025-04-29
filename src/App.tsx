@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Todo } from './types/Todo';
 import { getTodos, createTodo, updateTodo, deleteTodo } from './services/todoService';
 import { v4 as uuidv4 } from 'uuid';
+import './index.css'
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -62,7 +63,9 @@ function App() {
           required
           style={{ width: '100%', marginBottom: 10 }}
         />
-        <button type="submit">{editingTodoId ? 'Update Todo' : 'Add Todo'}</button>
+        <button type="submit" className={`button ${editingTodoId ? 'button-update' : 'button-add'}`}>
+          {editingTodoId ? 'Update Todo' : 'Add Todo'}
+        </button>
       </form>
 
       <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -70,8 +73,8 @@ function App() {
           <li key={todo.id} style={{ marginBottom: 10, border: '1px solid #ccc', padding: 10 }}>
             <h3>{todo.title}</h3>
             <p>{todo.description}</p>
-            <button onClick={() => handleEdit(todo)} style={{ marginRight: 5 }}>Edit</button>
-            <button onClick={() => handleDelete(todo.id)}>Delete</button>
+            <button onClick={() => handleEdit(todo)} className="button button-edit">Edit</button>
+            <button onClick={() => handleDelete(todo.id)} className="button button-delete">Delete</button>
           </li>
         ))}
       </ul>
